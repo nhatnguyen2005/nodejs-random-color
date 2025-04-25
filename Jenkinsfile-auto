@@ -19,7 +19,7 @@ pipeline {
                 sh 'aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 522814716237.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs-random-color'
 
                 sh 'docker tag nodejs-random-color:latest 522814716237.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs-random-color:latest'
-                sh 'docker push 522814716237.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs-random-color/nodejs-random-color:latest'
+                sh 'docker push 522814716237.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs-random-color:latest'
             }
         }
         stage('Update task definition and force deploy ecs service') {
